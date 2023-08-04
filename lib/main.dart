@@ -13,6 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Instagram Clone',
       theme: ThemeData(
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
@@ -20,7 +22,6 @@ class MyApp extends StatelessWidget {
       ),
       home: const App(),
       initialBinding: InitBinding(),
-      // debugShowCheckedModeBanner: false,
     );
   }
 }
