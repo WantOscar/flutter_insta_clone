@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 
 enum Page { HOME, SEARCH, UPLOAD, REELS, MYPAGE }
 
-class BottomNavController extends GetxController {
-  final RxInt _pageIndex = 0.obs;
+class BottomNAvController extends GetxController {
+  RxInt _pageIndex = 0.obs;
 
-  final List<int> _history = [0];
+  List<int> _history = [0];
 
   int get index => _pageIndex.value;
 
@@ -24,8 +24,9 @@ class BottomNavController extends GetxController {
   }
 
   void moveToPage(int value) {
-    if ((_history.last != value) && Platform.isAndroid) {
+    if (_history.last != value && Platform.isAndroid) {
       _history.add(value);
+      print(_history);
     }
     _pageIndex(value);
   }

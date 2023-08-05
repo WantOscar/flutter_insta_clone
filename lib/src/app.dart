@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_instagram/src/controller/bottom_nav_controller.dart';
 import 'package:flutter_instagram/src/widget/image_avatar.dart';
 import 'package:flutter_instagram/src/widget/image_data.dart';
+import 'package:flutter_instagram/view/home.dart';
+import 'package:flutter_instagram/view/search.dart';
 import 'package:get/get.dart';
 
-class App extends GetView<BottomNavController> {
+class App extends GetView<BottomNAvController> {
   const App({super.key});
 
   @override
@@ -38,25 +40,26 @@ class App extends GetView<BottomNavController> {
         BottomNavigationBarItem(
             icon: ImageData(path: ImagePath.searchOff),
             activeIcon: ImageData(path: ImagePath.searchOn),
-            label: 'search'),
+            label: 'home'),
         BottomNavigationBarItem(
             icon: ImageData(path: ImagePath.upload),
             activeIcon: ImageData(path: ImagePath.upload),
-            label: 'upload'),
+            label: 'home'),
         BottomNavigationBarItem(
             icon: ImageData(path: ImagePath.reelsOff),
             activeIcon: ImageData(path: ImagePath.reelsOn),
-            label: 'reels'),
+            label: 'home'),
         const BottomNavigationBarItem(
             icon: ImageAvatar(
-                type: AvatarType.OFF,
                 url:
-                    'https://cdn.arstechnica.net/wp-content/uploads/2016/02/5718897981_10faa45ac3_b-640x624.jpg'),
+                    'https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202301/19/SpoHankook/20230119052512141eivc.jpg',
+                type: AvatarType.OFF),
             activeIcon: ImageAvatar(
-                type: AvatarType.ON,
-                url:
-                    'https://cdn.arstechnica.net/wp-content/uploads/2016/02/5718897981_10faa45ac3_b-640x624.jpg'),
-            label: 'myPage'),
+              url:
+                  'https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202301/19/SpoHankook/20230119052512141eivc.jpg',
+              type: AvatarType.ON,
+            ),
+            label: 'home'),
       ],
     );
   }
@@ -65,6 +68,8 @@ class App extends GetView<BottomNavController> {
     return IndexedStack(
       index: controller.index,
       children: [
+        const Home(),
+        const Search(),
         Container(color: Colors.red),
         Container(color: Colors.blue),
         Container(color: Colors.green),
