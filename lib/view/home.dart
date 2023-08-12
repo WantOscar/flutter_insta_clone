@@ -48,8 +48,8 @@ class Home extends StatelessWidget {
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(children: [
-          Column(
-            children: const [
+          const Column(
+            children: [
               Padding(
                 padding: EdgeInsets.all(8.0),
                 child: ImageAvatar(

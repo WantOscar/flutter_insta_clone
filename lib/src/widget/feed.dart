@@ -219,8 +219,10 @@ class _FeedState extends State<Feed> {
   }
 
   void showCommentSheet() => showModalBottomSheet(
-      // showDragHandle: true,
+      showDragHandle: true,
       enableDrag: true,
+      isScrollControlled: true,
+      useSafeArea: true,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(25.0),
