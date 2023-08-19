@@ -3,6 +3,7 @@ import 'package:flutter_instagram/src/controller/bottom_nav_controller.dart';
 import 'package:flutter_instagram/src/widget/image_avatar.dart';
 import 'package:flutter_instagram/src/widget/image_data.dart';
 import 'package:flutter_instagram/view/home.dart';
+import 'package:flutter_instagram/view/mypage.dart';
 import 'package:flutter_instagram/view/search.dart';
 import 'package:get/get.dart';
 
@@ -72,9 +73,7 @@ class App extends GetView<BottomNAvController> {
         const Search(),
         Container(color: Colors.red),
         Container(color: Colors.blue),
-        Container(color: Colors.green),
-        Container(color: Colors.yellow),
-        Container(color: Colors.black),
+        const MyPage(),
       ],
     );
   }
